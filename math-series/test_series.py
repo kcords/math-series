@@ -1,6 +1,6 @@
 import pytest
 
-from series import sum_series
+from series import fibonacci, lucas, sum_series
 
 def test_sum_series_one():
     expected = 0
@@ -27,7 +27,7 @@ def test_sum_series_ten():
     actual = sum_series(10)
     assert expected == actual
 
-def test_sum_series_one_hundred():
+def test_sum_series_large_number():
     expected = 218922995834555169026
     actual = sum_series(100)
     assert expected == actual
@@ -57,8 +57,29 @@ def test_sum_series_ten_with_optional_params():
     actual = sum_series(10, 2, 1)
     assert expected == actual
 
-def test_sum_series_one_hundred_with_optional_params():
+def test_sum_series_large_number_with_optional_params():
     expected = 489526700523968661124
     actual = sum_series(100, 2, 1)
     assert expected == actual
 
+def test_sum_series_and_fibonacci_same_result_ten():
+    expected = 34
+    fibonacci_actual = fibonacci(10)
+    sum_series_actual = sum_series(10)
+    assert expected == fibonacci_actual == sum_series_actual
+
+def test_fibonacci_five():
+    expected = 34
+    actual = fibonacci(5)
+    assert expected == actual
+
+def test_sum_series_and_lucas_same_result_ten():
+    expected = 76
+    lucas_actual = lucas(10)
+    sum_series_actual = sum_series(10, 2, 1)
+    assert expected == lucas_actual == sum_series_actual
+
+def test_lucas_five():
+    expected = 34
+    actual = lucas(5)
+    assert expected == actual
