@@ -69,7 +69,7 @@ def test_sum_series_and_fibonacci_same_result_ten():
     assert expected == fibonacci_actual == sum_series_actual
 
 def test_fibonacci_five():
-    expected = 34
+    expected = 3
     actual = fibonacci(5)
     assert expected == actual
 
@@ -80,6 +80,6 @@ def test_sum_series_and_lucas_same_result_ten():
     assert expected == lucas_actual == sum_series_actual
 
 def test_lucas_five():
-    expected = 34
+    expected = 7
     actual = lucas(5)
     assert expected == actual
